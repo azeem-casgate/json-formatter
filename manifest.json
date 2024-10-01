@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Developer Productivity Tools",
+  "version": "1.2",
+  "description": "A set of tools for developers: JSON Formatter, LocalStorage Viewer, Network Request Viewer, JS Console, Clipboard Manager, and Code Snippet Manager.",
+  "permissions": [
+    "storage",               
+    "cookies",               
+    "activeTab",             
+    "scripting",            
+    "clipboardRead",        
+    "clipboardWrite",        
+    "webRequest",            
+    "declarativeNetRequest",
+    "tabs"    
+  ],
+  "host_permissions": [
+    "<all_urls>"             
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  }
+}

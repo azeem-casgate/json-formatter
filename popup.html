@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Productivity Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dev Productivity Tools</h1>
+
+        <div class="tabs">
+            <div class="tab active" id="json-tab">JSON Formatter</div>
+            <div class="tab" id="storage-tab">LocalStorage Viewer</div>
+            <div class="tab" id="snippet-tab">Snippet Manager</div>
+            <div class="tab" id="network-tab">Network Requests</div>
+            <div class="tab" id="clipboard-tab">Clipboard Manager</div>
+            <div class="tab" id="user-agent-tab">User-Agent Switcher</div>
+        </div>
+
+        <!-- JSON Formatter -->
+        <div class="tab-content show" id="json-content">
+            <h2>JSON Formatter</h2>
+            <textarea id="json-input" placeholder="Paste JSON here..."></textarea>
+            <button id="format-json">Format JSON</button>
+            <pre id="json-output"></pre>
+        </div>
+
+        <!-- Network Request Viewer -->
+        <div class="tab-content" id="network-content">
+            <h2>Network Request Viewer</h2>
+            <button id="start-capture">Start Capturing</button>
+            <button id="stop-capture" disabled>Stop Capturing</button>
+            <pre id="network-output">No requests captured yet.</pre>
+        </div>
+
+        <!-- LocalStorage Viewer -->
+        <div class="tab-content" id="storage-content">
+            <h2>LocalStorage & Cookies</h2>
+            <button id="view-local-storage">View LocalStorage</button>
+            <button id="view-cookies">View Cookies</button>
+            <button id="view-session-storage">View SessionStorage</button>
+            <pre id="storage-output"></pre>
+        </div>
+
+        <!-- Snippet Manager -->
+        <div class="tab-content" id="snippet-content">
+            <h2>Snippet Manager</h2>
+            <textarea id="snippet-input" placeholder="Write your code snippet..."></textarea>
+            <button id="save-snippet">Save Snippet</button>
+            <button id="view-snippets">View Snippets</button>
+            <pre id="snippet-output"></pre>
+        </div>
+
+        <!-- Clipboard Manager -->
+        <div class="tab-content" id="clipboard-content">
+            <h2>Clipboard Manager</h2>
+            <textarea id="clipboard-input" placeholder="Enter or paste text here..."></textarea>
+            <button id="copy-to-clipboard">Copy to Clipboard</button>
+            <button id="paste-from-clipboard">Paste from Clipboard</button>
+            <pre id="clipboard-output"></pre>
+        </div>
+
+        <!-- User-Agent Switcher -->
+        <div class="tab-content" id="user-agent-content">
+            <h2 class="section-title">User-Agent Switcher</h2>
+            
+            <!-- Input for custom User-Agent -->
+            <div class="form-group">
+                <input 
+                    type="text" 
+                    id="user-agent-input" 
+                    class="input-field" 
+                    placeholder="Enter custom User-Agent">
+            </div>
+        
+            <!-- Button to set User-Agent -->
+            <div class="form-group">
+                <button id="set-user-agent" class="action-button">Set User-Agent</button>
+            </div>
+        
+            <!-- Optional message display -->
+            <div id="user-agent-message" class="message-box"></div>
+        </div>        
+
+        <!-- JavaScript Console -->
+        <div class="tab-content" id="js-console-content">
+            <h2>JavaScript Console</h2>
+            <textarea id="js-console-input" placeholder="Enter JavaScript code"></textarea>
+            <button id="run-js">Run JS</button>
+            <pre id="js-console-output"></pre>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <div class="theme-switcher">
+            <label>
+                <input type="checkbox" id="dark-mode-toggle"> Enable Dark Mode
+            </label>
+        </div>
+    </div>
+
+    <script type="module" src="popup.js"></script>
+</body>
+</html>
